@@ -6,7 +6,7 @@ Visit https://goo.gl/AfmQLo to use the website.
 ## Functioning
 - Your Amazon Product URLs are automatically saved to Firebase as you enter the values
 - A cron job checks for changes in product information every minute to give near-instant notifications
-- You can start following/tracing the program from flaskapp.py into eKoomerce/____init____.py for the core functionality
+- You can start following/tracing the program from flaskapp.py into eKoomerce/\__init__.py for the core functionality
 - Cron jobs are located under .openshift/cron/minutely for both eKoomerce and kooqueue
 
 ## How to use
