@@ -9,6 +9,11 @@ Visit https://goo.gl/AfmQLo to use the website.
 - You can start following/tracing the program from flaskapp.py into eKoomerce/\__init__.py for the core functionality
 - Cron jobs are located under .openshift/cron/minutely for both eKoomerce and kooqueue
 
+## Sample SMS
+- Philips earphones just went out of stock goo.gl/gNaT467
+- Samsung TV price dropped by 9% from ₹ 79,500.00 to ₹ 72,100.00 goo.gl/5gThaOp
+- Seagate 2TB Hard Disk has come into stock goo.gl/gHvR7b3
+
 ## How to use
 - Visit the URL mentioned above to enter Amazon India Product URLs
 - Enter URL in a textbox and click outside that box or elsewhere to automatically save the URLs
