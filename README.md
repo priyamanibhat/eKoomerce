@@ -19,3 +19,9 @@ Visit https://goo.gl/AfmQLo to use the website.
 - Keeping track of the price changes and product information by using URL and user mapping
 - Mapping successfully verified Twitter user with their number to send SMS notifications
 - Queuing unsuccessful SMSes for the following day. SMSes may not be sent due to TRAI regulations of sending the numbers from 9am-9pm.
+
+## Tech Stack
+- Python Flask for API Backend, hosted on Openshift server
+- MaterializeCSS for the Frontend UI
+- Firebase for NoSQL realtime database and easy Twitter authentication
+- Of course, Kookoo APIs for sending the SMSes
