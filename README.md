@@ -10,9 +10,9 @@ Visit https://goo.gl/AfmQLo to use the website.
 - Cron jobs are located under .openshift/cron/minutely for both eKoomerce and kooqueue
 
 ## Sample SMS
-- Philips earphones just went out of stock goo.gl/gNaT467
-- Samsung TV price dropped by 9% from ₹ 79,500.00 to ₹ 72,100.00 goo.gl/5gThaOp
-- Seagate 2TB Hard Disk has come into stock goo.gl/gHvR7b3
+- Philips earphones just went out of stock http://goo.gl/gNaT467
+- Samsung TV price dropped by 9% from ₹ 79,500.00 to ₹ 72,100.00 http://goo.gl/5gThaOp
+- Seagate 2TB Hard Disk has come into stock http://goo.gl/gHvR7b3
 
 ## How to use
 - Visit the URL mentioned above to enter Amazon India Product URLs
