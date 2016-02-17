@@ -20,18 +20,21 @@
 		strong {
 			font-weight: bold;
 		}
-		
-		iframe {
-			margin-top: 8px;
-		}
 
+		#header > h2, #header > h5 {
+			display: inline-block;
+		}
 	</style>
 </head>
 
 <body>
+	<div id="header" class="center-align pink">
+		<div class="section">
+			<h2 class="light white-text">eKoomerce</h2>
+			<h5 class="white-text">Instant pings of Amazon products</h5>
+		</div>
+	</div>
 	<div class="container">
-		<h2 class="center-align light">eKoomerce</h2>
-		<h5 class="center-align grey-text">Instant pings of Amazon products</h5>
 		<div id="login-section" class="row section center-align">
 			<button id="login" class="btn-large waves-effect waves-light blue"><img src="/images/twitter_mini_logo.png" style="vertical-align:middle; margin-right:12px;" />Login</button>
 		</div>
@@ -42,10 +45,10 @@
 				<input id="mobile-input" type="text"/>
 				<label for="mobile-input">10 digit Mobile number</label>
 			</div>
-			<hr class="col s12 m8 offset-m2 l6 offset-l3"/>
+			<hr class="col s12 l10 offset-l1"/>
 			<form id="url-form">
-				<div class="input-field col s12 m8 offset-m2 l6 offset-l3">
-					<input id="input-0" type="text" class="url-input" onkeyup="keyup(0)"/>
+				<div class="input-field col s12 m10 offset-m1 l8 offset-l2">
+					<input id="input-0" type="text" class="url-input" oninput="changed(0)"/>
 					<label for="input-0">Amazon Product URL</label>
 				</div>
 			</form>
@@ -66,6 +69,7 @@
 		function setFields() {
 			var uid = rootRef.getAuth().uid;
 			rootRef.child('user/' + uid).once('value', function(data) {
+				$('#logged-in-section').show();
 				data = data.val();
 				$('#mobile-input').val(data.phone_no);
 				if(data.url) {
@@ -93,7 +97,6 @@
 		function refresh(authData) {
 			$('.row, #error-text').hide();
 			if(authData) {
-				$('#logged-in-section').show();
 				setFields();
 			} else {
 				$('#login-section').show();
@@ -111,18 +114,18 @@
 
 		function blurred() {
 			var uid = rootRef.getAuth().uid;
-			var urls = [], k = 0;
+			var urls = [];
 			$('.url-input').each(function(i) {
 				var url = $(this).val();
 				if(url)
-					urls[k++] = url;
+					urls.push(url);
 			});
 			var userData = {phone_no: $('#mobile-input').val(), url: urls};
 			rootRef.child('user/' + uid).set(userData);
 			Materialize.toast('Saved!', 3000);
 		}
 
-		function keyup(pos) {
+		function changed(pos) {
 			if(pos==noOfInputs-1 && $('#input-'+pos).val().length>0) {
 				$('#url-form').append(makeUrlInput(pos+1, ''));
 				noOfInputs++;
@@ -132,8 +135,8 @@
 		}
 
 		function makeUrlInput(pos, txt) {
-			return '<div class="input-field col s12 m8 offset-m2 l6 offset-l3">\
-				<input id="input-'+pos+'" type="text" class="url-input" onkeyup="keyup('+pos+')" value="'+txt+'"/>\
+			return '<div class="input-field col s12 m10 offset-m1 l8 offset-l2">\
+				<input id="input-'+pos+'" type="text" class="url-input" oninput="changed('+pos+')" value="'+txt+'"/>\
 				<label for="input-'+pos+'">Amazon Product URL</label>\
 				</div>';
 		}
